@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Tweaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .run-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .run-button:hover {
+            background-color: #45a049;
+        }
+        
+        .description {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Tweaker</h1>
+    
+    <button class="run-button" id="runScript1" data-url="https://raw.githubusercontent.com/non-reai/Gimkit-Hacks/main/exploit-auto.js">Get energy without answering questions on gimkit</button>
+    <p class="description">copy the gimkit link, run the script and paste the link into the prompt and when you answer a question right then press";" and when you need energy or money press "u".</p>
+    
+    <button class="run-button" id="runScript2" data-url="https://raw.githubusercontent.com/ub96/JSTweaker/main/non-github-scripts/autoclicker.js">Auto clicker for chrome</button>
+    <p class="description">this does not work on all apps and games but press ctrl+e to stop the autoclicker</p>
+    
+    <button class="run-button" id="runScript3" data-url="script3.js">Run Script 3</button>
+    <p class="description">This is the description for Script 3.</p>
+    
+    <!-- Add more buttons and descriptions here as needed -->
+    
+    <script>
+        // Get the DOM elements
+        const runScriptButtons = document.querySelectorAll('.run-button');
+        
+        // Execute the script when any button is clicked
+        runScriptButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Get the URL associated with the button
+                const scriptUrl = button.dataset.url;
+                
+                // Load the script dynamically
+                const script = document.createElement('script');
+                script.src = scriptUrl;
+                document.head.appendChild(script);
+            });
+        });
+    </script>
+</body>
+</html>
